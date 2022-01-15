@@ -52,11 +52,24 @@ let ton_a_doba: string[] = []
 let Sluníčko: string[] = []
 let ovecka: string[] = []
 music.setVolume(179)
+music.setTempo(90)
 ovecka = [
+"G1 4",
+"P 8",
+"A1 4",
+"P 8",
+"H1 2",
+"P 4",
+"C1 2",
+"P 8",
 "C1 4",
 "P 8",
-"E1 4",
+"C1 4",
 "P 4",
-"C2 4"
+"C1 4",
+"P 4",
+"H1 4",
+"P 4",
+"A1 2"
 ]
 Sluníčko = ["A1 8"]
