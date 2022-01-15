@@ -1,17 +1,57 @@
+function hrej_notu (nota: string) {
+    ton_a_doba = nota.split(" ")
+    ton = ton_a_doba[0]
+    doba = text_na_dobu(ton_a_doba[1])
+    if (ton == "C1") {
+        music.playTone(262, doba)
+    } else if (ton == "D1") {
+        music.playTone(294, doba)
+    } else if (ton == "E1") {
+        music.playTone(330, doba)
+    } else if (ton == "F1") {
+        music.playTone(349, doba)
+    } else if (ton == "G1") {
+        music.playTone(392, doba)
+    } else if (ton == "A1") {
+        music.playTone(440, doba)
+    } else if (ton == "H1") {
+        music.playTone(494, doba)
+    } else if (ton == "C2") {
+        music.playTone(523, doba)
+    } else if (ton == "P") {
+        music.rest(doba)
+    }
+}
 input.onButtonPressed(Button.A, function () {
     hrej(ovecka)
 })
-function hrej_ton (ton: string) {
-    hodnota = ton.split("")
-}
-function hrej (tóny: any[]) {
-    for (let hodnota of tóny) {
-        hrej_ton(hodnota)
+function hrej (noty: any[]) {
+    for (let hodnota of noty) {
+        hrej_notu(hodnota)
     }
 }
-let hodnota: string[] = []
+function text_na_dobu (d: string) {
+    if (d == "1") {
+        return music.beat(BeatFraction.Whole)
+    } else if (d == "2") {
+        return music.beat(BeatFraction.Half)
+    } else if (d == "4") {
+        return music.beat(BeatFraction.Quarter)
+    } else if (d == "8") {
+        return music.beat(BeatFraction.Eighth)
+    } else {
+        return music.beat(BeatFraction.Whole)
+    }
+}
+input.onButtonPressed(Button.B, function () {
+    hrej(Sluníčko)
+})
+let doba = 0
+let ton = ""
+let ton_a_doba: string[] = []
+let Sluníčko: string[] = []
 let ovecka: string[] = []
-music.setVolume(60)
+music.setVolume(179)
 ovecka = [
 "C1 4",
 "P 8",
@@ -19,6 +59,4 @@ ovecka = [
 "P 4",
 "C2 4"
 ]
-basic.forever(function () {
-	
-})
+Sluníčko = ["A1 8"]
